@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel='stylesheet' href="/css/home.css">
+</head>
+
+<body>
+    
+    <div class="topnav">
+        <a href="/">Home</a>         <!-- Thẻ a ứng với method get-->>
+        <a href="/create">Create User</a>
+        <a href="#contact">Update User</a>
+        <a href="#about">About</a>
+    </div>
+    
+    <div class="form">
+        <form action="/edit-user" method="POST">
+            <fieldset>
+                <legend>Update user:</legend>
+                <div class="d-none">
+                    <label for="id">Id:</label>
+                    <input type="text" id="id" name="userId" value="<%= oldUser.id %>">
+                </div>
+                <div class="form-group">
+                    <label for="emailId">Email:</label>
+                    <input type="email" id="emailId" name="email" value="<%= oldUser.email %>">
+                </div>
+                <div class="form-group">
+                    <label for="nameId">Name:</label>
+                    <input type="text" id="nameId" name="name" value="<%= oldUser.name %>">
+                </div>
+                <div class="form-group">
+                    <label for="cityId">City:</label>
+                    <input type="text" id="cityId" name="city" value="<%= oldUser.city %>">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel='stylesheet' href="/css/home.css">
+    <link rel='stylesheet' href="/css/table.css">
+
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a> <!-- Thẻ a ứng với method get-->>
+        <a href="/create">Create User</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <table id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Action</th>
+        </tr>
+        <% for (let i=0; i < listUsers.length; i++) { %>
+            <tr>
+                <td><%= listUsers[i].name %></td>
+                <td><%= listUsers[i].email %></td>
+                <td><%= listUsers[i].city %></td>
+                <td>
+                    <a href="/update/<%= listUsers[i].id %>">Update</a>
+                    <button>Delete</button>
+                </td>
+
+            </tr>
+        <% } %>
+    </table>
+
+
+</body>
+
+</html>
